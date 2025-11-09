@@ -35,6 +35,7 @@ function limpaCampo(){
     quantidade =  document.getElementById('quantidade').value=''; // inseri campo vazio no value
     de = document.getElementById('de').value='';
     ate = document.getElementById('ate').value='';
+    document.getElementById('resultado').innerHTML='<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>';
    
 }
 
