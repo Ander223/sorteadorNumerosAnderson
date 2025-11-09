@@ -1,5 +1,4 @@
 let numeroAleatorio;
-                               // let numeroInseridoNaLista;
 
 
 function sortear(){
@@ -17,13 +16,13 @@ function sortear(){
             numeroAleatorio = geraNumerosAleatorios(de, ate);                  // caso seja repetido chama a função novamente
         } else {
                 listaNumerosSorteados.push(numeroAleatorio);  // se o numeroAleatorio não estiver na lista insere o mesmo
-            }  alert(`lista de numeros aleatorios ${listaNumerosSorteados}`); 
-      
-      
-    } limpaCampo();
-    
+            } // alert(`lista de numeros aleatorios ${listaNumerosSorteados}`); 
+           
+    } 
     let numerosEscolhidos = document.getElementById('resultado').innerHTML=`<label class="texto__paragrafo">Números sorteados: ${listaNumerosSorteados}</label>`;  
-}
+
+} reiniciar();
+
    
 
 function geraNumerosAleatorios(min , max){
@@ -36,4 +35,18 @@ function limpaCampo(){
     quantidade =  document.getElementById('quantidade').value=''; // inseri campo vazio no value
     de = document.getElementById('de').value='';
     ate = document.getElementById('ate').value='';
+   
+}
+
+function reiniciar(){
+    let botaoReiniciar = document.getElementById('btn-reiniciar');
+
+    if(botaoReiniciar.classList.contains('container__botao-desabilitado')){
+        botaoReiniciar.classList.remove('container__botao-desabilitado');
+        botaoReiniciar.classList.add('container__botao');
+    } else {
+        botaoReiniciar.classList.add('container__botao');
+        botaoReiniciar.classList.remove('container__botao-desabilitado');
+    }
+    limpaCampo();
 }
