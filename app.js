@@ -19,8 +19,10 @@ function sortear(){
                 listaNumerosSorteados.push(numeroAleatorio);  // se o numeroAleatorio não estiver na lista insere o mesmo
             }  alert(`lista de numeros aleatorios ${listaNumerosSorteados}`); 
       
-        
+      
     } limpaCampo();
+    
+    let numerosEscolhidos = document.getElementById('resultado').innerHTML=`<label class="texto__paragrafo">Números sorteados: ${listaNumerosSorteados}</label>`;  
 }
    
 
@@ -31,7 +33,7 @@ function geraNumerosAleatorios(min , max){
 
 function limpaCampo(){
 
-    quantidade =  document.getElementById('quantidade').value='';
+    quantidade =  document.getElementById('quantidade').value=''; // inseri campo vazio no value
     de = document.getElementById('de').value='';
     ate = document.getElementById('ate').value='';
 }
