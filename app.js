@@ -6,7 +6,8 @@ function sortear(){
     let ate = parseInt( document.getElementById('ate').value);
 
     let listaNumerosSorteados = [];
-   
+   if((ate-de)>=(quantidade)){  // verifica se a quantidade /de número a ser gerado esta dentro do range.
+    
     for(let i = 1; i <= quantidade; i ++){             // controla a qtd de numeros aletorios que irão ser gerados
 
           numeroAleatorio = geraNumerosAleatorios(de, ate);  // chama a função e envia 2 numeros por parametro e depois recebe 2 numeros por parametros para serem comparados no if
@@ -19,11 +20,15 @@ function sortear(){
         } else {
                 listaNumerosSorteados.push(numeroAleatorio);  // se o numeroAleatorio não estiver na lista insere o mesmo
             } // console.log(`lista de numeros aleatorios ${listaNumerosSorteados}`); 
+        
+        document.getElementById('resultado').innerHTML=`<label class="texto__paragrafo">Números sorteados: ${listaNumerosSorteados}</label>`;  
+        // exibe os numeros sorteados na tela
            
     } 
-     document.getElementById('resultado').innerHTML=`<label class="texto__paragrafo">Números sorteados: ${listaNumerosSorteados}</label>`;  
-        // exibe os numeros sorteados na tela 
-} reiniciar();
+   }else {
+        alert('A quantidade de números a ser gerado esta acima do limite mínimo e máximo! (fora do range de números)');
+   }
+}  reiniciar();
 
    
 
